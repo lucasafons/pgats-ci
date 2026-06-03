@@ -1,0 +1,16 @@
+version: "1.1"
+
+name: "API Tests"
+
+env:
+  host: "https://example.com"
+
+tests:
+  status-check:
+    steps:
+      - name: GET status
+        http:
+          url: "${{env.host}}"
+          method: GET
+          check:
+            status: /^20/
