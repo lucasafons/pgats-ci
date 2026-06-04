@@ -1,0 +1,19 @@
+name: Self Hosted Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Test Runner
+        run: |
+          echo "Running on self-hosted runner"
+          hostname
+          pwd
